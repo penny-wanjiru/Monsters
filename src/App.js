@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
+import { CardList } from './components/card-list.component'
 import './App.css';
 
 
@@ -21,7 +22,10 @@ componentDidMount(){
   render() {
     return(
       <div className="App">
-        { this.state.monsters.map(monster => (<h1 key={ monster.id } >{ monster.name }</h1>)) }
+				<CardList name='penny'>
+				  <h1>Child</h1>
+					{ this.state.monsters.map(monster => (<h1 key={ monster.id } >{ monster.name }</h1>)) }
+				</CardList>
       </div>
     );
   }
