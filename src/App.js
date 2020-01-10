@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import { CardList } from './components/card-list.component'
+import { Search } from './components/search/search.component'
 import './App.css';
 
 
@@ -25,7 +26,7 @@ componentDidMount(){
 		const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()));
     return(
       <div className="App">
-				<input type='search' placeholder='search monsters' onChange={e=> this.setState({searchField:e.target.value})}/>
+				<Search placeholder = 'search monsters' change = {e=> this.setState({searchField:e.target.value})}/>
 				<CardList monsters={filteredMonsters}/>
       </div>
     );
